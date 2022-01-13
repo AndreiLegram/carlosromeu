@@ -14,10 +14,8 @@ module.exports = {
                     msg.reply(`oi lindo`)
                 }
             }
-        } else {
-            this.verifyGreet(msg)
         }
-        
+
         return false
     },
 
@@ -52,19 +50,6 @@ module.exports = {
         let content = msg.content.substring(quoteIndex, quoteLastIndex).trim()
         if (content.length > 0) {
             channel.send(content)
-        }
-    },
-
-    async verifyGreet(msg) {
-        let greet = msg.content
-        if (msg.author.id !== msg.client.user.id) {
-            if (greet.includes('bom dia')) {
-                msg.reply(`bom dia !!`)
-            } else if (greet.includes('boa tarde')) {
-                msg.reply(`boa tarde !!`)
-            } else if (greet.includes('boa noite')) {
-                msg.reply(`boa noite !!`)
-            }
         }
     },
 
